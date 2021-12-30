@@ -11,26 +11,11 @@ Pytorch implementation of the paper ["Detecting Anomalous Event Sequences with T
     ```
     conda activate anomaly_tpp
     ```
-3. Fix a bug in `tick`: There is a bug in the version of `tick` distributed via PyPI that makes it incompatible with `scikit-learn`.
-    - Open the file with the bug
-       ```bash
-       nano $(dirname $(which python))/../lib/python3.9/site-packages/tick/preprocessing/longitudinal_features_product.py
-       ```
-    - Modify line 8 from
-      ```python
-      from sklearn.externals.joblib import Parallel, delayed
-      ```
-      to
-      ```python
-      from joblib import Parallel, delayed
-      ```
-    - Save and exit the file: `Ctrl + X`, `Y`, `Return`.
-
-4. Install the package (this command must be run in the `tpp-anomaly-detection` folder)
+3. Install the package (this command must be run in the `tpp-anomaly-detection` folder)
     ```
     pip install -e .
     ```
-5. Unzip the data
+4. Unzip the data
     ```
     unzip data.zip
     ```
